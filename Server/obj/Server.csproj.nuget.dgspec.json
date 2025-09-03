@@ -56,19 +56,41 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
-            "Microsoft.AspNetCore.SignalR.Client": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.7, )",
+              "version": "[9.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[9.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[9.0.0, )",
               "versionCentrallyManaged": true
             }
           },
           "centralPackageVersions": {
             "Microsoft.AspNetCore.Components.WebAssembly": "9.0.7",
             "Microsoft.AspNetCore.Components.WebAssembly.DevServer": "9.0.7",
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.5",
-            "Microsoft.AspNetCore.OpenApi": "9.0.7",
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "9.0.0",
             "Microsoft.AspNetCore.SignalR.Client": "9.0.7",
-            "Microsoft.EntityFrameworkCore": "8.0.5"
+            "Microsoft.EntityFrameworkCore": "9.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "9.0.0",
+            "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",
+            "Microsoft.EntityFrameworkCore.Tools": "9.0.0"
           },
           "imports": [
             "net461",
@@ -143,10 +165,12 @@
           "centralPackageVersions": {
             "Microsoft.AspNetCore.Components.WebAssembly": "9.0.7",
             "Microsoft.AspNetCore.Components.WebAssembly.DevServer": "9.0.7",
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.5",
-            "Microsoft.AspNetCore.OpenApi": "9.0.7",
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "9.0.0",
             "Microsoft.AspNetCore.SignalR.Client": "9.0.7",
-            "Microsoft.EntityFrameworkCore": "8.0.5"
+            "Microsoft.EntityFrameworkCore": "9.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "9.0.0",
+            "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",
+            "Microsoft.EntityFrameworkCore.Tools": "9.0.0"
           },
           "imports": [
             "net461",

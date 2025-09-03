@@ -12,11 +12,11 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-/////// Servers database
+/// Servers database
 List<string> Servers = new List<string>()
 {
-    
-}
+    // Empty for now, but the semicolon is required after list initialization.
+};
 
 List<string> PipeNames = new List<string>()
 {
@@ -33,6 +33,6 @@ List<string> PipeNames = new List<string>()
 
 app.UseHttpsRedirection();
 
-/// look for server(s) signalR here
+/// Look for server(s) SignalR here
 
 app.Run();
