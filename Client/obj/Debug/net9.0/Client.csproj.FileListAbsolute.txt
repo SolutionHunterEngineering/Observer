@@ -1147,9 +1147,6 @@ E:\__OBSERVER\Observer2507_3101\Observer\Client\obj\Debug\net9.0\Client.MvcAppli
 E:\__OBSERVER\Observer2507_3101\Observer\Client\obj\Debug\net9.0\Client.dll
 E:\__OBSERVER\Observer2507_3101\Observer\Client\obj\Debug\net9.0\refint\Client.dll
 E:\__OBSERVER\Observer2507_3101\Observer\Client\obj\Debug\net9.0\Client.pdb
-D:\__OBSERVER\Observer2508_0701\Observer\Client\obj\Debug\net9.0\Client.dll
-D:\__OBSERVER\Observer2508_0701\Observer\Client\obj\Debug\net9.0\refint\Client.dll
-D:\__OBSERVER\Observer2508_0701\Observer\Client\obj\Debug\net9.0\Client.pdb
 D:\__OBSERVER\Observer2508_0701\Observer\Client\obj\Debug\net9.0\Client.csproj.AssemblyReference.cache
 D:\__OBSERVER\Observer2508_0701\Observer\Client\obj\Debug\net9.0\rpswa.dswa.cache.json
 D:\__OBSERVER\Observer2508_0701\Observer\Client\obj\Debug\net9.0\Client.GeneratedMSBuildEditorConfig.editorconfig
@@ -1157,3 +1154,4 @@ D:\__OBSERVER\Observer2508_0701\Observer\Client\obj\Debug\net9.0\Client.Assembly
 D:\__OBSERVER\Observer2508_0701\Observer\Client\obj\Debug\net9.0\Client.AssemblyInfo.cs
 D:\__OBSERVER\Observer2508_0701\Observer\Client\obj\Debug\net9.0\Client.csproj.CoreCompileInputs.cache
 D:\__OBSERVER\Observer2508_0701\Observer\Client\obj\Debug\net9.0\Client.MvcApplicationPartsAssemblyInfo.cache
+D:\__OBSERVER\Observer2508_0701\Observer\Client\obj\Debug\net9.0\Client.sourcelink.json

@@ -602,9 +602,6 @@
       "Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
-        "dependencies": {
-          "Microsoft.AspNetCore.SignalR.Client": "8.0.2"
-        },
         "compile": {
           "bin/placeholder/Shared.dll": {}
         },
@@ -1214,9 +1211,6 @@
       "Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
-        "dependencies": {
-          "Microsoft.AspNetCore.SignalR.Client": "8.0.2"
-        },
         "compile": {
           "bin/placeholder/Shared.dll": {}
         },

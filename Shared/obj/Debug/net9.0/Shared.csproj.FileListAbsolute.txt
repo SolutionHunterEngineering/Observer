@@ -23,11 +23,11 @@ E:\__OBSERVER\Observer2507_3101\Observer\Shared\obj\Debug\net9.0\ref\Shared.dll
 D:\__OBSERVER\Observer2508_0701\Observer\Shared\bin\Debug\net9.0\Shared.deps.json
 D:\__OBSERVER\Observer2508_0701\Observer\Shared\bin\Debug\net9.0\Shared.dll
 D:\__OBSERVER\Observer2508_0701\Observer\Shared\bin\Debug\net9.0\Shared.pdb
-D:\__OBSERVER\Observer2508_0701\Observer\Shared\obj\Debug\net9.0\Shared.csproj.AssemblyReference.cache
 D:\__OBSERVER\Observer2508_0701\Observer\Shared\obj\Debug\net9.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
 D:\__OBSERVER\Observer2508_0701\Observer\Shared\obj\Debug\net9.0\Shared.AssemblyInfoInputs.cache
 D:\__OBSERVER\Observer2508_0701\Observer\Shared\obj\Debug\net9.0\Shared.AssemblyInfo.cs
 D:\__OBSERVER\Observer2508_0701\Observer\Shared\obj\Debug\net9.0\Shared.csproj.CoreCompileInputs.cache
+D:\__OBSERVER\Observer2508_0701\Observer\Shared\obj\Debug\net9.0\Shared.sourcelink.json
 D:\__OBSERVER\Observer2508_0701\Observer\Shared\obj\Debug\net9.0\Shared.dll
 D:\__OBSERVER\Observer2508_0701\Observer\Shared\obj\Debug\net9.0\refint\Shared.dll
 D:\__OBSERVER\Observer2508_0701\Observer\Shared\obj\Debug\net9.0\Shared.pdb
