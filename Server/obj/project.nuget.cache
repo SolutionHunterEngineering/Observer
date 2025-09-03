@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "AcTUpOllpBo=",
+  "success": false,
+  "projectFilePath": "D:\\__OBSERVER\\Observer2508_0701\\Observer\\Server\\Server.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1008",
+      "level": "Error",
+      "message": "Projects that use central package version management should not define the version on the PackageReference items but on the PackageVersion items: Microsoft.AspNetCore.SignalR.Client;Microsoft.AspNetCore.Identity.EntityFrameworkCore;Microsoft.AspNetCore.OpenApi;Microsoft.EntityFrameworkCore.",
+      "projectPath": "D:\\__OBSERVER\\Observer2508_0701\\Observer\\Server\\Server.csproj",
+      "filePath": "D:\\__OBSERVER\\Observer2508_0701\\Observer\\Server\\Server.csproj",
+      "targetGraphs": []
+    }
+  ]
+}

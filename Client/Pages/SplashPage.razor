@@ -1,0 +1,18 @@
+﻿@page "/"
+@using Client.Services
+
+@inject SignalRClientService SignalR
+
+<div class="splash-background">
+    <!-- Optional: you can overlay a logo or quote here -->
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        SignalR.OnLogReceived += msg => Console.WriteLine($"[LOG] {msg}");
+
+        await SignalR.ConnectAsync("http://localhost:7270/logHub"); 
+        await SignalR.SendStartStreamingCommandAsync();
+    }
+}
