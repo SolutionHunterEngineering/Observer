@@ -1,18 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\__OBSERVER\\Observer2507_3101\\Observer\\",
+  "WorkspaceRootPath": "D:\\__OBSERVER\\Observer2508_0701\\Observer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{43BE0795-092E-4F7F-BB48-B3D1552EEFE3}|Server\\Server.csproj|e:\\__observer\\observer2507_3101\\observer\\server\\loghub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43BE0795-092E-4F7F-BB48-B3D1552EEFE3}|Server\\Server.csproj|solutionrelative:server\\loghub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{43BE0795-092E-4F7F-BB48-B3D1552EEFE3}|Server\\Server.csproj|d:\\__observer\\observer2508_0701\\observer\\server\\models\\logs\\logrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43BE0795-092E-4F7F-BB48-B3D1552EEFE3}|Server\\Server.csproj|solutionrelative:server\\models\\logs\\logrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B13407A6-EEA2-45A5-84BD-940C023B6F26}|Client\\Client.csproj|e:\\__observer\\observer2507_3101\\observer\\client\\pages\\splashpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B13407A6-EEA2-45A5-84BD-940C023B6F26}|Client\\Client.csproj|solutionrelative:client\\pages\\splashpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B13407A6-EEA2-45A5-84BD-940C023B6F26}|Client\\Client.csproj|e:\\__observer\\observer2507_3101\\observer\\client\\services\\signalrclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B13407A6-EEA2-45A5-84BD-940C023B6F26}|Client\\Client.csproj|solutionrelative:client\\services\\signalrclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{43BE0795-092E-4F7F-BB48-B3D1552EEFE3}|Server\\Server.csproj|d:\\__observer\\observer2508_0701\\observer\\server\\models\\logs\\logengineeringstream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43BE0795-092E-4F7F-BB48-B3D1552EEFE3}|Server\\Server.csproj|solutionrelative:server\\models\\logs\\logengineeringstream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LogRecord.cs",
+              "DocumentMoniker": "D:\\__OBSERVER\\Observer2508_0701\\Observer\\Server\\Models\\Logs\\LogRecord.cs",
+              "RelativeDocumentMoniker": "Server\\Models\\Logs\\LogRecord.cs",
+              "ToolTip": "D:\\__OBSERVER\\Observer2508_0701\\Observer\\Server\\Models\\Logs\\LogRecord.cs",
+              "RelativeToolTip": "Server\\Models\\Logs\\LogRecord.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T17:39:05.721Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -50,41 +59,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LogHub.cs",
-              "DocumentMoniker": "E:\\__OBSERVER\\Observer2507_3101\\Observer\\Server\\LogHub.cs",
-              "RelativeDocumentMoniker": "Server\\LogHub.cs",
-              "ToolTip": "E:\\__OBSERVER\\Observer2507_3101\\Observer\\Server\\LogHub.cs",
-              "RelativeToolTip": "Server\\LogHub.cs",
+              "DocumentIndex": 1,
+              "Title": "LogEngineeringStream.cs",
+              "DocumentMoniker": "D:\\__OBSERVER\\Observer2508_0701\\Observer\\Server\\Models\\Logs\\LogEngineeringStream.cs",
+              "RelativeDocumentMoniker": "Server\\Models\\Logs\\LogEngineeringStream.cs",
+              "ToolTip": "D:\\__OBSERVER\\Observer2508_0701\\Observer\\Server\\Models\\Logs\\LogEngineeringStream.cs",
+              "RelativeToolTip": "Server\\Models\\Logs\\LogEngineeringStream.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T18:48:56.769Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SignalRClientService.cs",
-              "DocumentMoniker": "E:\\__OBSERVER\\Observer2507_3101\\Observer\\Client\\Services\\SignalRClientService.cs",
-              "RelativeDocumentMoniker": "Client\\Services\\SignalRClientService.cs",
-              "ToolTip": "E:\\__OBSERVER\\Observer2507_3101\\Observer\\Client\\Services\\SignalRClientService.cs",
-              "RelativeToolTip": "Client\\Services\\SignalRClientService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAqwBwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T15:32:43.049Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SplashPage.razor",
-              "DocumentMoniker": "E:\\__OBSERVER\\Observer2507_3101\\Observer\\Client\\Pages\\SplashPage.razor",
-              "RelativeDocumentMoniker": "Client\\Pages\\SplashPage.razor",
-              "ToolTip": "E:\\__OBSERVER\\Observer2507_3101\\Observer\\Client\\Pages\\SplashPage.razor",
-              "RelativeToolTip": "Client\\Pages\\SplashPage.razor",
-              "ViewState": "AgIAAAQAAAAAAAAAAIA0wBIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-23T14:48:49.44Z",
+              "WhenOpened": "2025-09-03T17:39:02.5Z",
               "EditorCaption": ""
             }
           ]

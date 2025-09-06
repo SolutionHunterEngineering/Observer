@@ -1,38 +1,32 @@
 ﻿using Microsoft.AspNetCore.SignalR.Client;
-using System;
-using System.Threading.Tasks;
 
 namespace Client.Services
 {
     public class SignalRClientService
     {
-        private HubConnection? _connection;
+        private HubConnection _connection;
 
-        public event Action<string>? OnLogReceived;
-
-        public async Task ConnectAsync(string serverUrl)
+        public async Task InitializeAsync()
         {
             _connection = new HubConnectionBuilder()
-                .WithUrl($"{serverUrl}")
-                .WithAutomaticReconnect()
+                .WithUrl("https://localhost:5001/logHub") // adjust port if needed
                 .Build();
 
-            _connection.On<string>("ReceiveLogMessage", (message) =>
+            _connection.On<string, string>("ReceiveMessage", (user, message) =>
             {
-                OnLogReceived?.Invoke(message); // <<<<<<Add it to the list to be displayed !!!!!!!!
+                Console.WriteLine($"[{user}]: {message}");
+                // Later: update UI or state instead of just Console
             });
 
             await _connection.StartAsync();
-            await _connection.InvokeAsync("StartLogStreaming");
         }
 
-
-        public async Task StopAsync()
+        public async Task SendStartStreamingCommandAsync(string user, string msg)
         {
-            if (_connection is not null)
-            {
-                await _connection.StopAsync();
-            }
+            if (_connection == null)
+                throw new InvalidOperationException("SignalR connection not initialized.");
+
+            await _connection.SendAsync("SendMessage", user, msg);
         }
     }
 }

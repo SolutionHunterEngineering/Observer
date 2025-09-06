@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m/vMjuVOCWc=",
+  "dgSpecHash": "CaLnq/U1Qzs=",
   "success": true,
-  "projectFilePath": "D:\\__OBSERVER\\Observer2508_0701\\Observer\\Server\\Server.csproj",
+  "projectFilePath": "D:\\__OBSERVER\\Observer2509_0601\\Observer\\Server\\Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\princ\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\princ\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

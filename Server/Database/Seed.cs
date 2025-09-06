@@ -1,12 +1,11 @@
-﻿using IdentityDomain;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
-
+using Server.Models.Identity;
 namespace Server.Database
 {
     public class Seed
@@ -54,11 +53,6 @@ namespace Server.Database
                     new Claim(ClaimTypes.Email, user.Email)
                 };
 
-                if (user.isAdmin) claims.Add(new Claim("AdminUser", "true"));
-                if (user.isDesigner) claims.Add(new Claim("Designer", "true"));
-                if (user.isTrialUser) claims.Add(new Claim("TrialUser", "true"));
-                if (user.isUser) claims.Add(new Claim("User", "true"));
-
                 await userManager.AddClaimsAsync(user, claims);
 
                 // Generate a token for each user for testing purposes
@@ -74,11 +68,6 @@ namespace Server.Database
                 new Claim(ClaimTypes.Name, user.UserName),
                 new Claim(ClaimTypes.Email, user.Email)
             };
-
-            if (user.isAdmin) claims.Add(new Claim("AdminUser", "true"));
-            if (user.isDesigner) claims.Add(new Claim("Designer", "true"));
-            if (user.isTrialUser) claims.Add(new Claim("TrialUser", "true"));
-            if (user.isUser) claims.Add(new Claim("User", "true"));
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["TokenKey"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

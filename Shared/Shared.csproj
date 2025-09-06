@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <!-- Package references here, no Version attribute -->
+      <Folder Include="Models\" />
     </ItemGroup>
 
 </Project>

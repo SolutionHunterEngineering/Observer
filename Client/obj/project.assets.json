@@ -2338,11 +2338,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\__OBSERVER\\Observer2508_0701\\Observer\\Client\\Client.csproj",
+      "projectUniqueName": "D:\\__OBSERVER\\Observer2509_0601\\Observer\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "D:\\__OBSERVER\\Observer2508_0701\\Observer\\Client\\Client.csproj",
+      "projectPath": "D:\\__OBSERVER\\Observer2509_0601\\Observer\\Client\\Client.csproj",
       "packagesPath": "C:\\Users\\princ\\.nuget\\packages\\",
-      "outputPath": "D:\\__OBSERVER\\Observer2508_0701\\Observer\\Client\\obj\\",
+      "outputPath": "D:\\__OBSERVER\\Observer2509_0601\\Observer\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "centralPackageVersionsManagementEnabled": true,
       "fallbackFolders": [
@@ -2365,8 +2365,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "D:\\__OBSERVER\\Observer2508_0701\\Observer\\Shared\\Shared.csproj": {
-              "projectPath": "D:\\__OBSERVER\\Observer2508_0701\\Observer\\Shared\\Shared.csproj"
+            "D:\\__OBSERVER\\Observer2509_0601\\Observer\\Shared\\Shared.csproj": {
+              "projectPath": "D:\\__OBSERVER\\Observer2509_0601\\Observer\\Shared\\Shared.csproj"
             }
           }
         }

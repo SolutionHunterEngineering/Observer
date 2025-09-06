@@ -1,0 +1,446 @@
+﻿@using System.Net.Http.Headers
+@using System.Text.Json
+@using client.Services;
+@using Client.Services
+@using Data;
+@using SigPipes;
+
+@inject NavigationManager NavigationManager
+@inject HttpClient http
+@inject Cache CacheSvc
+@inject IToastService ToastService
+@inject StateService  StateService
+
+@inject RequestProjectService RequestProjectService
+
+<div class="navbar" style="display: flex; flex-direction:row; justify-content: start; position: relative; background-color: #0a5746; color: white;">
+    <button class="btn btn-secondary ms-3 me-4" style="background-color: #0a5746; color: white;"
+    type="button" @onclick='(() => Toggle("solutionhunter"))'>
+        Solution Hunter &nbsp;&nbsp; 5_22_11
+    </button>
+
+    @if (this.currentUserId == 0)
+    {
+        <div>
+            <button class="btn btn-secondary me-4" style="background-color: #850f1a; color: white; z-index: 10; border-radius: 6px;"
+            type="button" @onclick='(() => Toggle("overview"))'>
+                Overview
+            </button>
+            @if (ShowOverview)
+            {
+                <div style="background-color:  #850f1a; display: flex; flex-direction:column; align-items: start; position: absolute; top: 100%; z-index: 10; margin-top: -12px;">
+                    <button class="ms-2" type="button" style="border: 0; background-color:  #850f1a; color: white; z-index: 10;"
+                    data-cy="whatshunter" @onclick="@( () => { SelectItem("whatshunter"); })">
+                        What is Hunter
+                    </button>
+                    <button class="ms-2" type="button" style="border: 0; background-color:  #850f1a; color: white; z-index: 10;"
+                    data-cy="hardproblem" @onclick="@( () => { SelectItem("hardproblem"); })">
+                        Some 'Hard' Problems
+                    </button>
+                    <button class="ms-2" type="button" style="border: 0; background-color:  #850f1a; color: white; z-index: 10;"
+                    data-cy="usinghunter" @onclick="@( () => { SelectItem("usinghunter"); })">
+                        Using Hunter
+                    </button>
+                    <button class="ms-2" type="button" style="border: 0; background-color:  #850f1a; color: white; z-index: 10;"
+                    data-cy="aiga" @onclick="@( () => { SelectItem("aiga"); })">
+                        Artificial Intelligence
+                    </button>
+                </div>
+            }
+        </div>
+
+        <div>
+            <button class="btn btn-secondary me-4" style="background-color: #850f1a; color: white; z-index: 10; border-radius: 6px;"
+            type="button" data-cy="GuidesMenu" @onclick='(() => Toggle("guides"))'>
+                Guides
+            </button>
+            @if (ShowGuides)
+            {
+                <div style="background-color: #850f1a; display: flex; flex-direction:column; align-items: start; position: absolute; top: 100%; z-index: 10; margin-top: -12px;">
+                    <button class="ms-2" type="button" style="border: 0; background-color:  #850f1a; color: white; z-index: 10;"
+                    data-cy="tutorials" @onclick="@( () => { SelectItem("tutorials"); })">
+                        Tutorials
+                    </button>
+                    <button class="ms-2" type="button" style="border: 0; background-color:  #850f1a; color: white; z-index: 10;"
+                    data-cy="aboutResearch" @onclick="@( () => { SelectItem("aboutResearch"); })">
+                        Research Applications
+                    </button>
+                </div>
+            }
+        </div>
+
+        <div>
+            <button class="btn btn-secondary me-4" style="background-color: #850f1a; color: white; z-index: 10; border-radius: 6px;"
+            type="button" data-cy="ContactsMenu" @onclick='(() => Toggle("contacts"))'>
+                Contacts
+            </button>
+            @if (ShowContacts)
+            {
+                <div style="background-color: #850f1a; display: flex; flex-direction:column; align-items: start; position: absolute; top: 100%; z-index: 10; margin-top: -12px;">
+                    <button class="ms-2" type="button" style="border: 0; background-color:  #850f1a; color: white; z-index: 10;"
+                    data-cy="aboutUs" @onclick="@( () => { SelectItem("aboutUs"); })">
+                        About Us
+                    </button>
+                    <button class="ms-2" type="button" style="border: 0; background-color:  #850f1a; color: white; z-index: 10;"
+                    data-cy="contactUs" @onclick="@( () => { SelectItem("contactUs"); })">
+                        Contact Us
+                    </button>
+                    <button class="ms-2" type="button" style="border: 0; background-color:  #850f1a; color: white; z-index: 10;"
+                    data-cy="support" @onclick="@( () => { SelectItem("support"); })">
+                        Support
+                    </button>
+                    <button class="ms-2" type="button" style="border: 0; background-color:  #850f1a; color: white; z-index: 10;"
+                    data-cy="consulting" @onclick="@( () => { SelectItem("consulting"); })">
+                        Consulting Services
+                    </button>
+                </div>
+            }
+        </div>
+
+        <div>
+            <button class="btn btn-secondary me-4" 
+            style="background-color: #850f1a; color: white; z-index: 10; border-radius: 6px;"
+            type="button" @onclick='(() => Toggle("signup"))'>
+                SignUp
+            </button>
+            @if (ShowSignup)
+            {
+                <div class="btn btn-secondary me-4" 
+                style="background-color: #850f1a; display: flex; flex-direction:column; align-items: start; position: absolute; top: 100%; z-index: 10; margin-top: -12px;">
+                    <button class="ms-2" type="button" style="border: 0; background-color:  #850f1a; color: white; z-index: 10;" 
+                    @onclick="@( () => { SelectItem("null"); })">
+                        See your System Admin
+                    </button>
+                    <button class="ms-2" type="button" style="border: 0; background-color:  #850f1a; color: white; z-index: 10;" 
+                    @onclick="@( () => { SelectItem("contactUs"); })">
+                        OR Click Here to contact us
+                    </button>
+                </div>
+            }
+        </div>
+
+        <div class="me-3 item-end"><input type="text" placeholder="username" style="justify-content: end; width:100px;"
+            @bind="@userName" @bind:event="oninput" data-cy="login-username" @onkeydown="HandleEnterKeyPress" />
+        </div>
+        <div class="me-2"><input type="password" placeholder="password" style="width:100px;"
+            @bind="password" @bind:event="oninput" data-cy="login-password" @onkeydown="HandleEnterKeyPress" />
+        </div>
+        <button class="btn btn-secondary ms-2 me-3" type="button" data-cy="login-submit"
+        style="border-radius: 6px; background-color: #850f1a; color: white; z-index: 10;"
+        @onclick="Login">
+            Login
+        </button>
+        <div class="me-4">Help</div>
+    }
+    else
+    {
+        @if (this.isAdmin)
+        {
+            <div>
+                <button class="btn btn-secondary me-4" style="background-color: #850f1a; color: white; z-index: 10; border-radius: 6px;"
+                type="button"
+                data-cy="adminFunctions" @onclick='(() => Toggle("admin"))'>
+                    Administration
+                </button>
+                @if (ShowAdmin)
+                {
+                    <div style="background-color: #850f1a; display: flex; flex-direction:column; align-items: start; position: absolute; top: 100%; z-index: 10; margin-top: -12px;">
+                        <button class="ms-2" type="button" style="border: 0; background-color:  #850f1a; color: white; z-index: 10;"
+                        data-cy="newUser" @onclick="@( () => { SelectItem("adminNewUser"); })">
+                            New User
+                        </button>
+                        <button class="ms-2" type="button" style="border: 0; background-color:  #850f1a; color: white; z-index: 10;"
+                        data-cy="manageUsers" @onclick="@( () => { SelectItem("adminManageUsers"); })">
+                            Manage Users
+                        </button>
+                        <button class="ms-2" type="button" style="border: 0; background-color:  #850f1a; color: white; z-index: 10;"
+                        data-cy="manageSearchEngines" @onclick="@( () => { SelectItem("adminManageSearchEngines"); })">
+                            Manage Search Engines
+                        </button>
+                        <button class="ms-2" type="button" style="border: 0; background-color:  #850f1a; color: white; z-index: 10;"
+                        data-cy="loadRandomDatabase" @onclick="@( () => { SelectItem("adminLoadRandomDB"); })">
+                            Load Random Database
+                        </button>
+                        <button class="ms-2" type="button" style="border: 0; background-color:  #850f1a; color: white; z-index: 10;"
+                        data-cy="DataBackupRestore" @onclick="@( () => { SelectItem("adminBackupRestore"); })">
+                            Data Backup/Restore
+                        </button>
+                    </div>
+                }
+            </div>
+        }
+
+        @if (this.isAdmin || this.isDesigner)
+        {
+            <div>
+                <button class="btn btn-secondary me-4" style="background-color: #850f1a; color: white; z-index: 10; border-radius: 6px;"
+                data-cy="ProjectDesign" type="button" @onclick='(() => Toggle("design"))'>
+                    Project Design
+                </button>
+                @if (ShowDesign)
+                {
+                    <div style="background-color: #850f1a; display: flex; flex-direction:column; align-items: start; position: absolute; top: 100%; z-index: 10; margin-top: -12px;">
+                        <button class="ms-2" type="button" style="border: 0; background-color:  #850f1a; color: white; z-index: 10;"
+                        data-cy="newProject" @onclick="@( () => { SelectItem("newProject"); })">
+                            New Project
+                        </button>
+                        <button class="ms-2" type="button" style="border: 0; background-color:  #850f1a; color: white; z-index: 10;"
+                        @onclick="@( () => { SelectItem("ProjectsList"); })">
+                            Manage Projects
+                        </button>
+                    </div>
+                }
+            </div>
+        }
+
+        @if (this.isAdmin || this.isDesigner || this.isUser)
+        {
+            <div>
+                <button class="btn btn-secondary me-4" style="background-color: #850f1a; color: white; z-index: 10; border-radius: 6px;"
+                type="button" @onclick='(() => Toggle("execution"))'>
+                    Execution
+                </button>
+                @if (ShowExecution)
+                {
+                    <div style="background-color: #850f1a; display: flex; flex-direction:column; align-items: start; position: absolute; top: 100%; z-index: 10; margin-top: -12px;">
+                        <button class="ms-2" type="button" style="border: 0; background-color:  #850f1a; color: white; z-index: 10;"
+                        @onclick="@( () => { SelectItem("Launch"); })">
+                            Launch & Manage Projects
+                        </button>
+                    </div>
+                }
+            </div>
+        }
+
+        <div style="margin-left: auto">
+            <div style="display: inline-flex; flex-direction: row; justify-content: flex-start;">
+                <div style="color: white; width: auto; margin-top: 8px; margin-left: 20px;" data-cy="WelcomeMessage">
+                    Welcome @welcomeName
+                </div>
+                <div style="color: white; width: auto; margin-top: 6px;">
+                    <button type="button" data-cy="LogoutButton" @onclick="Logout"
+                    style="margin-left: 10px; height: 34px; width: 70px; background-color:#850f1a; color: white; border-radius: 5px; font-size: 14px;">
+                        Logout
+                    </button>
+
+                    <button type="button" (click)="showHelp()"
+                    style="background-color:#850f1a; color: white; margin-left: 20px; height: 34px; width: 70px; margin-right: 20px; border-radius: 5px; font-size: 14px;">
+                        Help
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    private bool ShowOverview { get; set; } = false;
+    private bool ShowGuides { get; set; } = false;
+    private bool ShowContacts { get; set; } = false;
+    private bool ShowSignup { get; set; } = false;
+
+    private bool ShowAdmin { get; set; } = false;
+    private bool ShowDesign { get; set; } = false;
+    private bool ShowExecution { get; set; } = false;
+
+    public string userName { get; set; } = string.Empty;
+    public string password { get; set; } = string.Empty;
+
+    private bool MenuIsShowing { get; set; } = false;
+    private string currentOpen { get; set; } = string.Empty;
+
+    public int currentUserId { get; set; } = 0;
+    public string welcomeName { get; set; } = string.Empty;
+    public bool isAdmin { get; set; } = true;
+    public bool isDesigner { get; set; } = false;
+    public bool isTrialUser { get; set; } = false;
+    public bool isUser { get; set; } = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        StateService.IsUpdatingState = false;
+    }
+
+    private void Toggle(string contentName)
+    {
+        if (MenuIsShowing)             // close all open menus
+        {
+
+            if (currentOpen == contentName)  // already open (clicked it again)
+            {
+                reverseStatus(contentName);
+                currentOpen = contentName;
+            }
+            else
+            {
+                resetStatusAll();
+            }
+
+
+            StateHasChanged();
+        }
+
+        if (contentName == "solutionhunter")
+        {
+            //// Logout if loggedin
+            NavigationManager.NavigateTo("/");
+        }
+
+        if (currentOpen != contentName)         // is the currently open menu the one being requested
+        {
+            MenuIsShowing = true;
+            reverseStatus(contentName);
+            currentOpen = contentName;
+            StateHasChanged();
+        } else
+        {
+            resetStatusAll();
+            MenuIsShowing = false;
+            currentOpen = string.Empty;
+            StateHasChanged();
+        }
+    }
+
+    private async void SelectItem(string item)
+    {
+        resetStatusAll();
+        MenuIsShowing = false;
+        currentOpen = string.Empty;
+        StateHasChanged();
+
+        if (item == "newProject")
+        {
+            CacheSvc.ClearProjectSelectedId();   // sets it to "0"
+            RequestProjectService.ShowProject.Next(0);
+            this.NavigationManager.NavigateTo("/MainPage");
+            this.NavigationManager.NavigateTo("/newProject");
+            StateHasChanged();
+        }
+
+        if (item != "null")
+        {
+            NavigationManager.NavigateTo(item);
+            StateHasChanged();
+        }
+    }
+
+    private void reverseStatus(string item)
+    {
+        switch (item)
+        {
+            case "overview":
+                ShowOverview = !ShowOverview;
+                break;
+            case "guides":
+                ShowGuides = !ShowGuides;
+                break;
+            case "contacts":
+                ShowContacts = !ShowContacts;
+                break;
+            case "signup":
+                ShowSignup = !ShowSignup;
+                break;
+
+            case "admin":
+                ShowAdmin = !ShowAdmin;
+                break;
+            case "design":
+                ShowDesign = !ShowDesign;
+                break;
+            case "execution":
+                ShowExecution = !ShowExecution;
+                break;
+        }
+    }
+
+    private void resetStatusAll()
+    {
+        ShowOverview = false;
+        ShowGuides = false;
+        ShowContacts = false;
+        ShowSignup = false;
+
+        ShowAdmin = false;
+        ShowDesign = false;
+        ShowExecution = false;
+    }
+
+    private async Task Login()
+    {
+        var args = new Dictionary<string, object>
+            {
+                ["Username"] = userName,
+                ["Password"] = password
+            };
+
+        try
+        {
+//FIX            var response = await SSBridge.Accounts("Login", args);
+//FIX            var ur = response as SigPipeResponse;
+
+            if (true)  ///////////////if (ur != null && ur.Success)
+            {
+//FIX           // RegUpdDto loginResponse = response.Result is JsonElement json
+                //     ? json.Deserialize<RegUpdDto>() ?? new RegUpdDto()
+                //     : new RegUpdDto();
+                // if (loginResponse != null)
+                // {
+                //     var token = loginResponse.Token;
+                //     CacheSvc.SetLoginUserToken(token);
+                //     // Optionally, set up the authorization header for future requests
+                //     http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                //
+                //     currentUserId = loginResponse.Id;
+                //     CacheSvc.SetLoginUserId(currentUserId);
+                //     isAdmin = loginResponse.isAdmin;
+                //     isDesigner = loginResponse.isDesigner;
+                //     isTrialUser = loginResponse.isTrialUser;
+                //     isUser = loginResponse.isUser;
+                //     welcomeName = loginResponse.KnownAs;
+                //
+                //     CacheSvc.SetUserLoginStatus(true);
+                //     CacheSvc.SetRegUser(loginResponse);
+                //
+                //     userName = string.Empty;
+                //     password = string.Empty;
+                //
+                //     StateHasChanged();
+                // } 
+                // else
+                // {
+                //     ToastService.ShowError($"Error logging in {userName}");
+                // }
+                NavigationManager.NavigateTo("/MainPage");
+            }
+            else
+            {
+                // Handle error response
+//FIX           this.ToastService.ShowError($"Login failed: {ur?.ErrorMessage ?? "Unknown error"}");
+            }
+        }
+        catch (Exception e)
+        { 
+//FIX ////// await Message.Log(MsgType.Error, $"Server Error during login exception {e.Message}"); /////////////////
+        }
+    }
+
+    private async Task Logout()
+    {
+        currentUserId = 0;
+        isAdmin = false;
+        isDesigner = false;
+        isTrialUser = false;
+        isUser = false;
+        welcomeName = string.Empty;
+        CacheSvc.SetUserLoginStatus(false);
+        Toggle("solutionhunter");
+    }
+
+    private async void HandleEnterKeyPress(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            await Login();
+        }
+    }
+}

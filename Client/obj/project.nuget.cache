@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5uFuWQ8Q01o=",
+  "dgSpecHash": "oKJ2UcPCuUU=",
   "success": true,
-  "projectFilePath": "D:\\__OBSERVER\\Observer2508_0701\\Observer\\Client\\Client.csproj",
+  "projectFilePath": "D:\\__OBSERVER\\Observer2509_0601\\Observer\\Client\\Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\princ\\.nuget\\packages\\microsoft.aspnetcore.authorization\\9.0.7\\microsoft.aspnetcore.authorization.9.0.7.nupkg.sha512",
     "C:\\Users\\princ\\.nuget\\packages\\microsoft.aspnetcore.components\\9.0.7\\microsoft.aspnetcore.components.9.0.7.nupkg.sha512",

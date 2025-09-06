@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\__OBSERVER\\Observer2508_0701\\Observer\\Shared\\Shared.csproj",
+      "projectUniqueName": "D:\\__OBSERVER\\Observer2509_0601\\Observer\\Shared\\Shared.csproj",
       "projectName": "Shared",
-      "projectPath": "D:\\__OBSERVER\\Observer2508_0701\\Observer\\Shared\\Shared.csproj",
+      "projectPath": "D:\\__OBSERVER\\Observer2509_0601\\Observer\\Shared\\Shared.csproj",
       "packagesPath": "C:\\Users\\princ\\.nuget\\packages\\",
-      "outputPath": "D:\\__OBSERVER\\Observer2508_0701\\Observer\\Shared\\obj\\",
+      "outputPath": "D:\\__OBSERVER\\Observer2509_0601\\Observer\\Shared\\obj\\",
       "projectStyle": "PackageReference",
       "centralPackageVersionsManagementEnabled": true,
       "fallbackFolders": [
