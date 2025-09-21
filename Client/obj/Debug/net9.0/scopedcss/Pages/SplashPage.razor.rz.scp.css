@@ -1,0 +1,16 @@
+body[b-j20lobvndo] {
+}
+
+.splash-background[b-j20lobvndo] {
+    background-image: url("images/ObserverSplash.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+

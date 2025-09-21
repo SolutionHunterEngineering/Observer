@@ -1,0 +1,148 @@
+/* /Layout/MainLayout.razor.rz.scp.css */
+.page[b-tmopy668it] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main[b-tmopy668it] {
+    flex: 1;
+}
+
+.sidebar[b-tmopy668it] {
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
+.top-row[b-tmopy668it] {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+    .top-row[b-tmopy668it]  a, .top-row[b-tmopy668it]  .btn-link {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+        text-decoration: none;
+    }
+
+    .top-row[b-tmopy668it]  a:hover, .top-row[b-tmopy668it]  .btn-link:hover {
+        text-decoration: underline;
+    }
+
+    .top-row[b-tmopy668it]  a:first-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@media (max-width: 640.98px) {
+    .top-row[b-tmopy668it] {
+        justify-content: space-between;
+    }
+
+    .top-row[b-tmopy668it]  a, .top-row[b-tmopy668it]  .btn-link {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page[b-tmopy668it] {
+        flex-direction: row;
+    }
+
+    .sidebar[b-tmopy668it] {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-tmopy668it] {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row.auth[b-tmopy668it]  a:first-child {
+        flex: 1;
+        text-align: right;
+        width: 0;
+    }
+
+    .top-row[b-tmopy668it], article[b-tmopy668it] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+/* /Layout/NavBar.razor.rz.scp.css */
+.navbar[b-4krlmpyg6q] {
+    background-color: #0a5746 !important;
+    color: white;
+}
+
+.navbar-brand[b-4krlmpyg6q] {
+    font-size: 1.1rem;
+    color: white;
+}
+
+.btn[b-4krlmpyg6q] {
+    font-size: 0.95rem;
+    border-radius: 4px;
+}
+
+    .btn.dropdown-toggle[b-4krlmpyg6q] {
+        background-color: #850f1a;
+        color: white;
+    }
+
+.navbar .dropdown-menu[b-4krlmpyg6q] {
+    background-color: white;
+    border-radius: 4px;
+    min-width: 10rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar .dropdown-item[b-4krlmpyg6q] {
+    color: #333;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+    .navbar .dropdown-item:hover[b-4krlmpyg6q] {
+        background-color: #f0f0f0;
+        color: #000;
+    }
+
+.connection-submenu[b-4krlmpyg6q] {
+    position: absolute;
+    top: 150px;
+    left: 150px;
+    z-index: 10;
+    display: flex;
+    gap: 75px;
+}
+
+    .connection-submenu .btn[b-4krlmpyg6q] {
+        background-color: #850f1a;
+        color: white;
+        border: none;
+    }
+/* /Pages/SplashPage.razor.rz.scp.css */
+body[b-j20lobvndo] {
+}
+
+.splash-background[b-j20lobvndo] {
+    background-image: url("images/ObserverSplash.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+

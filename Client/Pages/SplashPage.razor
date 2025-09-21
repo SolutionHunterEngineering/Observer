@@ -1,0 +1,33 @@
+﻿@page "/"
+@page "/splash"
+@inject Client.Services.SignalRClientService SignalRService
+
+<h3>SignalR Test</h3>
+
+<input @bind="user" placeholder="User" />
+<input @bind="message" placeholder="Message" />
+<button @onclick="SendMessage">Send</button>
+
+<ul>
+    @foreach (var log in logs)
+    {
+        <li>@log</li>
+    }
+</ul>
+
+@code {
+    private string user = "tester";
+    private string message;
+    private List<string> logs = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await SignalRService.InitializeAsync();
+    }
+
+    private async Task SendMessage()
+    {
+        await SignalRService.SendStartStreamingCommandAsync(user, message);
+        logs.Add($"[Me]: {message}");
+    }
+}

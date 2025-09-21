@@ -1,0 +1,71 @@
+﻿@using Observer.Shared
+@inject HttpClient Http
+
+<div class="top-row px-4">
+    <a href="" class="navbar-brand">Observer</a>
+</div>
+
+<div class="login-panel">
+    @if (IsLoggedIn)
+    {
+        <span>Welcome @CurrentUser</span>
+        <button @onclick="DoLogout">Logout</button>
+    }
+    else
+    {
+        @if (!string.IsNullOrEmpty(LoginMessage))
+        {
+            <span style="color:red">@LoginMessage</span>
+        }
+
+        <input @bind="LoginUsername" placeholder="Username" />
+        <input type="password" @bind="LoginPassword" placeholder="Password" />
+        <button @onclick="DoLogin">Login</button>
+    }
+</div>
+
+@code {
+    private bool IsLoggedIn = false;
+    private string LoginUsername = "";
+    private string LoginPassword = "";
+    private string CurrentUser = "";
+    private string LoginMessage = "";
+
+    private async Task DoLogin()
+    {
+        var request = new LoginRequestDto
+        {
+            Username = LoginUsername,
+            Password = LoginPassword
+        };
+
+        var response = await Http.PostAsJsonAsync("api/accounts/login", request);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var result = await response.Content.ReadFromJsonAsync<LoginResult>();
+            IsLoggedIn = true;
+            CurrentUser = result?.Username ?? "";
+            LoginMessage = "";
+        }
+        else
+        {
+            LoginMessage = "❌ Login failed — invalid username or password.";
+        }
+    }
+
+    private async Task DoLogout()
+    {
+        await Http.PostAsync("api/accounts/logout", null);
+        IsLoggedIn = false;
+        CurrentUser = "";
+        LoginMessage = "";
+    }
+
+    private class LoginResult
+    {
+        public string Message { get; set; }
+        public string Username { get; set; }
+        public string Role { get; set; }
+    }
+}

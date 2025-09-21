@@ -1,0 +1,11 @@
+D:\Observer\Observer2509_1201\Shared\bin\Debug\net9.0\Shared.deps.json
+D:\Observer\Observer2509_1201\Shared\bin\Debug\net9.0\Shared.dll
+D:\Observer\Observer2509_1201\Shared\bin\Debug\net9.0\Shared.pdb
+D:\Observer\Observer2509_1201\Shared\obj\Debug\net9.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Observer\Observer2509_1201\Shared\obj\Debug\net9.0\Shared.AssemblyInfoInputs.cache
+D:\Observer\Observer2509_1201\Shared\obj\Debug\net9.0\Shared.AssemblyInfo.cs
+D:\Observer\Observer2509_1201\Shared\obj\Debug\net9.0\Shared.csproj.CoreCompileInputs.cache
+D:\Observer\Observer2509_1201\Shared\obj\Debug\net9.0\Shared.dll
+D:\Observer\Observer2509_1201\Shared\obj\Debug\net9.0\refint\Shared.dll
+D:\Observer\Observer2509_1201\Shared\obj\Debug\net9.0\Shared.pdb
+D:\Observer\Observer2509_1201\Shared\obj\Debug\net9.0\ref\Shared.dll
